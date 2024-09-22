@@ -11,7 +11,7 @@ import feign.Headers;
 
 @FeignClient(value="inventory-service",url="http://localhost:8080/")
 public interface CarServiceClient {
-	@RequestMapping(method=RequestMethod.GET , value = "inventoy-service/api/cars/{carId}")
+	@RequestMapping(method=RequestMethod.GET , value = "inventory-service/api/cars/{carId}")
 	@Headers(value="Content-Type:application/json")
 	 GetCarResponse getByCarId(@PathVariable String carId);
 }
