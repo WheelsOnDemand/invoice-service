@@ -1,18 +1,34 @@
 server:
- port: 8082
+  port: 8082
 
 spring:
- application:
-  name: invoice-service 
- cloud:
+  application:
+    name: invoiceservice
+
+  cloud:
+    config:
+      profile: prod
+
+  kubernetes:
+    discovery:
+      enabled: true
+      all-namespaces: true
+
+  discovery:
+    client:
+      health-indicator:
+        enabled: false
+
   config:
-   profile: dev
- config:
-  import: configserver:http://localhost:8071
- jpa:
-   hibernate:
-     ddl-auto: update
-   properties:
-    hibernate:
-     dialect: org.hibernate.dialect.PostgreSQLDialect
-   show-sql: true
+    import: configserver:${CONFIG_SERVER_URL:http://localhost:9296}
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  sql:
+    init:
+      platform: mysql
+      mode: always

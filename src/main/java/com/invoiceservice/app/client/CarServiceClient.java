@@ -9,9 +9,9 @@ import com.invoiceservice.app.dto.response.GetCarResponse;
 
 import feign.Headers;
 
-@FeignClient(value="inventory-service",url="http://localhost:8080/")
+@FeignClient(value="inventory-service",url="${microservice.inventory}")
 public interface CarServiceClient {
-	@RequestMapping(method=RequestMethod.GET , value = "inventory-service/api/cars/{carId}")
+	@RequestMapping(method=RequestMethod.GET , value = "api/cars/{carId}")
 	@Headers(value="Content-Type:application/json")
 	 GetCarResponse getByCarId(@PathVariable String carId);
 }

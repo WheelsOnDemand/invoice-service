@@ -13,7 +13,7 @@ import com.invoiceservice.app.dto.response.CreateInvoiceResponse;
 import com.invoiceservice.app.dto.response.GetAllInvoicesResponse;
 import com.invoiceservice.app.service.InvoiceService;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RestController
