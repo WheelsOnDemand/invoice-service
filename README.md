@@ -1,7 +1,7 @@
 
 ## Invoice Service
 
-This is a simple invoice service that allows you to create, read, update, and delete invoices.
+Invoice service allows you to create, read, update, and delete invoices.
 
 <table>
     <thead>
