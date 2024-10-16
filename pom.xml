@@ -129,7 +129,7 @@
 				<version>3.4.1</version>
 				<configuration>
 					<to>
-						<image>wheelsondemand/invoiceservice</image>
+						<image>${REPO_URL}/invoiceservice</image>
 					</to>
 				</configuration>
 			</plugin>
